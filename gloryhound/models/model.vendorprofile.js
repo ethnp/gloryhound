@@ -1,13 +1,9 @@
-if (Meteor.isServer) {
-
-}
-
 VendorProfileModel = new Mongo.Collection('vendorprofiles');
 
 VendorProfile = {
     vendorname: '',
     address1: '',
-    address1: '',
+    address2: '',
     city: '',
     state: '',
     email_address: '',
