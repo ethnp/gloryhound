@@ -1,5 +1,6 @@
 // counter starts at 0
 accountsUIBootstrap3.setLanguage('en');
+/*
 Session.setDefault('counter', 0);
 
 Template.hello.helpers({
@@ -13,4 +14,4 @@ Template.hello.events({
         // increment the counter when button is clicked
         Session.set('counter', Session.get('counter') + 1);
     }
-});
+});*/

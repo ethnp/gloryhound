@@ -4,12 +4,15 @@
             <h3 class="panel-title">Public Items Dashboard</h3>
         </div>
         <div class="panel-body">
-            {{#each this.items}}
-                <li>{{>somename}}</li>
-            {{/each}}
+            <ul>
+                {{#each items}}
+                    {{> showItem}}
+                {{/each}}
+            </ul>
         </div>
     </div>
 </template>
-<template name='somename'>
-    somename template {{text}}
+
+<template name="showItem">
+    <div>{{text}}</div>
 </template>
