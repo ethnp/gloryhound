@@ -2,18 +2,12 @@
  * Created by ethan on 4/18/15.
  */
 if (Meteor.isServer) {
-    Items = new Mongo.Collection('items');
-    Items.helpers({
-        create: function(obj) {
-            this.insert( { item: "card", qty: 15 } )
-        },
-        getAll: function(){
-            return this.item + ' ' + this.qty
-        }
-    });
 
 }
+ItemsModel = new Mongo.Collection('items');
 
-Meteor.publish('Items', function(){
-    return new Items();
-});
+Items = {
+    create: function(obj){
+        return ItemsModel.insert(obj);
+    }
+};
