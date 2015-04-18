@@ -1,0 +1,12 @@
+<template name="dashboard">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Public Items Dashboard</h3>
+        </div>
+        <div class="panel-body">
+            {{#each items}}
+                {{> item}}
+            {{/each}}
+        </div>
+    </div>
+</template>
