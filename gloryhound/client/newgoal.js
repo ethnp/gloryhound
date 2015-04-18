@@ -5,6 +5,6 @@ Template.newItem.events({
     'submit form' : function (e) {
         e.preventDefault();
         console.log('form submitted');
-        var newitem = Items.create({name: e.target.itemName.value, amount: e.target.saveAmount.value});
+        Items.create({name: e.target.itemName.value, amount: e.target.saveAmount.value});
     }
 });
