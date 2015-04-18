@@ -8,5 +8,6 @@ meteor-platform
 autopublish
 insecure
 accounts-facebook
-accounts-ui
 service-configuration
+twbs:bootstrap
+ian:accounts-ui-bootstrap-3

@@ -1,5 +1,6 @@
 if (Meteor.isClient) {
   // counter starts at 0
+  accountsUIBootstrap3.setLanguage('en');
   Session.setDefault('counter', 0);
 
   Template.hello.helpers({
