@@ -2,9 +2,9 @@
  * Created by ethan on 4/18/15.
  */
 Template.newItem.events({
-    'submit form' : function (e) {
+    'submit form' : function (event) {
         e.preventDefault();
         console.log('form submitted');
-        Items.create({name: e.target.itemName.value, amount: e.target.saveAmount.value});
+        Items.create({name: event.target.itemName.value});
     }
 });
