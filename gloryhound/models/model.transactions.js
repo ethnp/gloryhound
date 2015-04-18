@@ -19,10 +19,17 @@ Transactions = {
     getAllTransactions: function(){
         return TransactionsModel.find({}).fetch();
     },
+    getAllTransactionsForItem: function(id){
+        return TransactionsModel.find({item: id}, {sort: {date: -1}}).fetch();
+    },
+
     updateTransaction: function(id, obj){
         return TransactionsModel.update(
             id,
             obj
         );
+    },
+    clean: function() {
+        TransactionsModel.remove();
     }
 };

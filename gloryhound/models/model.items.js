@@ -25,6 +25,9 @@ Items = {
             id,
             obj
         );
+    },
+    clean: function() {
+        ItemsModel.remove();
     }
 };
 

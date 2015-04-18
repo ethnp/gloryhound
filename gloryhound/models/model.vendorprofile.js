@@ -29,6 +29,9 @@ VendorProfile = {
             id,
             obj
         );
+    },
+    clean: function() {
+        VendorProfileModel.remove();
     }
 
 }
