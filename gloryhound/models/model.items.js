@@ -11,3 +11,14 @@ Items = {
         return ItemsModel.insert(obj);
     }
 };
+
+VendorProfileModel = new Mongo.Collection('vendorprofile');
+
+VendorProfile = {
+    create: function(obj){
+        return VendorProfileModel.insert(obj);
+    }
+
+}
+
+
