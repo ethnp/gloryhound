@@ -28,3 +28,14 @@ Items = {
         );
     }
 };
+
+VendorProfileModel = new Mongo.Collection('vendorprofile');
+
+VendorProfile = {
+    create: function(obj){
+        return VendorProfileModel.insert(obj);
+    }
+
+}
+
+
