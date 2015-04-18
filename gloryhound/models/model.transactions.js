@@ -11,16 +11,16 @@ Transactions = {
         if (typeof obj.amount === 'undefined') return 'Collection needs a valid amount property';
         if (typeof obj.date === 'undefined') return 'Collection needs a valid date property';
         if (typeof obj.user === 'undefined') return 'Collection needs a user id';
-        return Transactions.insert(obj);
+        return TransactionsModel.insert(obj);
     },
     getTransaction: function(id){
-        return Transactions.find(id).fetch();
+        return TransactionsModel.find(id).fetch();
     },
     getAllTransactions: function(){
-        return Transactions.find({}).fetch();
+        return TransactionsModel.find({}).fetch();
     },
     updateTransaction: function(id, obj){
-        return Transactions.update(
+        return TransactionsModel.update(
             id,
             obj
         );
