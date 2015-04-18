@@ -1,7 +1,7 @@
+Template.dashboard.onCreated(function () {
+   console.log(Transactions.create({item: 'asda', amount: '10.0', user:'1', date:new Date()}));
+});
+
 Template.dashboard.helpers({
-    items: [
-        { text: "This is task 1" },
-        { text: "This is task 2" },
-        { text: "This is task 3" }
-    ]
+    items :function () {return  Transactions.getAllTransactions();}
 });
