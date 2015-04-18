@@ -19,5 +19,15 @@ if (Meteor.isClient) {
 if (Meteor.isServer) {
   Meteor.startup(function () {
     // code to run on server at startup
+    //Add facebook creds
+    ServiceConfiguration.configurations.update({
+      service:"facebook"
+    }, {
+      $set: {
+        clientId: "1439955059635933",
+        loginStyle: "popup",
+        secret: "40365ab10e5af7922e10b07f81fc69b0"
+    }
+  });
   });
 }
