@@ -1,10 +1,17 @@
 /**
  * Created by ethan on 4/18/15.
  */
-Template.newItem.events({
+Template.newGoal.events({
     'submit form' : function (event) {
-        e.preventDefault();
+        event.preventDefault();
         console.log('form submitted');
-        Items.create({name: event.target.itemName.value});
+        console.log(Items.create(
+            {
+                name: event.target.itemName.value,
+                category: event.target.category.value,
+                charity: event.target.charity.value
+            }
+        ));
+
     }
 });
