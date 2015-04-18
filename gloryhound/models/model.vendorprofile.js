@@ -1,6 +1,17 @@
-VendorProfileModel = new Mongo.Collection('vendorprofile');
+if (Meteor.isServer) {
+
+}
+
+VendorProfileModel = new Mongo.Collection('vendorprofiles');
 
 VendorProfile = {
+    vendorname: '',
+    address1: '',
+    address1: '',
+    city: '',
+    state: '',
+    email_address: '',
+
     create: function(obj){
         if (typeof obj.vendorname === 'undefined') return 'Collection needs a valid vendorname property';
         if (typeof obj.address1 === 'undefined') return 'Collection needs a valid address1 property';
