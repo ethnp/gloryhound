@@ -8,3 +8,8 @@ Template.dashboard.helpers({
         return  DashboardItem.getPublicItems();}
 });
 
+Template.dashboard.events({
+    'click .publicItems': function(){
+
+    }
+});

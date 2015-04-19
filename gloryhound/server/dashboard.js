@@ -1,3 +1,2 @@
-Transactions.clean();
-Items.clean();
-Setup.setupData(this.userId);
+//Transactions.clean();
+//Items.clean();

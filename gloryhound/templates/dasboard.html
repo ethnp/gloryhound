@@ -17,7 +17,7 @@
     <li class="col-md-3">
         <div class="thumbnail" style="padding: 0">
             <div class="caption">
-                <h2>{{Item.name}} - ${{Item.price}}</h2>
+                <h2><a href="{{pathFor 'sellView' _id=Item._id}}">{{Item.name}} - ${{Item.price}}</a></h2>
                 <p>Amount saved: ${{amountSaved}}</p>
                 <p>Amount needed: ${{missing}}</p>
                 <p>Last Transaction {{lastTransaction}}</p>
