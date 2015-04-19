@@ -9,6 +9,9 @@ Items = {
     charity: '',
     price: '',
     userId: '',
+    sold: false,
+    installmentAmount: '',
+    frequency: '',
 
     create: function(obj){
         if (typeof obj.name === 'undefined') return 'Collection needs a valid name';
@@ -18,6 +21,7 @@ Items = {
         if (typeof obj.userId === 'undefined') return 'Collection needs a valid userId';
         if (typeof obj.installmentAmount === 'undefined') return 'Collection needs a valid installment amount';
         if (typeof obj.frequency === 'undefined') return 'Collection needs a valid freqeuncy';
+        if (typeof obj.sold === 'undefined') return 'Collection needs a valid selling property';
         return ItemsModel.insert(obj);
     },
     getItem: function(id){
@@ -34,7 +38,6 @@ Items = {
     },
     getItemsByCategory: function(category){
         var items = ItemsModel.find({"category": {$regex: category}}).fetch();
-        console.log(items);
 
         return items;
     },
@@ -44,6 +47,9 @@ Items = {
     },
     clean: function() {
         ItemsModel.remove({});
+    },
+    markItemSold: function(id){
+        ItemsModel.update({_id: id}, {$set: {'sold': true}});
     }
 };
 

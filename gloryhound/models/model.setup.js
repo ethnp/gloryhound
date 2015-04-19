@@ -9,7 +9,8 @@ Setup = {
             charity:  'Boys & Girls & Dogs & Cats',
             price: 400.0,
             installmentAmount:10.0,
-            frequency: 'Weekly'
+            frequency: 'Weekly',
+            sold: false
         });
 
 
@@ -45,7 +46,8 @@ Setup = {
             charity:  'Animals & Insects',
             price: 400.0,
             installmentAmount:10.0,
-            frequency: 'Monthly'
+            frequency: 'Monthly',
+            sold: false
         });
 
         Transactions.create({
@@ -78,7 +80,8 @@ Setup = {
             charity:  'Fishes & Fishers',
             price: 900.0,
             installmentAmount:10.0,
-            frequency: 'Daily'
+            frequency: 'Daily',
+            sold: false
         });
 
         Transactions.create({
@@ -113,7 +116,8 @@ Setup = {
             charity:  'Boys & Girls & Dogs & Cats',
             price: 2000.0,
             installmentAmount:100.0,
-            frequency: 'Monthly'
+            frequency: 'Monthly',
+            sold: false
         });
 
 
@@ -149,7 +153,8 @@ Setup = {
             charity:  'Veteran Automobiles',
             price: 450000.0,
             installmentAmount:10000.0,
-            frequency: 'Weekly'
+            frequency: 'Weekly',
+            sold: false
         });
 
 
