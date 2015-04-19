@@ -4,3 +4,7 @@ ul
 {
     list-style-type: none;
 }
+body {
+    background-image: url('background.jpg');
+    background-attachment: fixed;
+}
