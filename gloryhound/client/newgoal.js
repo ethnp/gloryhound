@@ -16,18 +16,19 @@ Template.newGoal.events({
                 frequency: event.target.frequency.value
             }
         );
-        Transactions.create(
-            {
-                itemId: newItem,
-                amount: event.target.installmentAmount.value,
-                date: new Date()
-
-            }
-        );
         Meteor.call('processPayment', event.target.totalAmount.value, function(error, response){
+            Transactions.create(
+                {
+                    itemId: newItem,
+                    amount: event.target.installmentAmount.value,
+                    date: new Date(),
+                    success: response.success
+
+                }
+            );
             console.log(response);
+            alert('Congratulations! You have started your path to saving for your desired ' + event.target.itemName.value + '!\n\rThank you also for donating to the charity ' + event.target.charity.value + '! You are a good person!');
+            window.location.href='/';
         });
-        alert('Congratulations! You have started your path to saving for your desired ' + event.target.itemName.value + '!\n\rThank you also for donating to the charity ' + event.target.charity.value + '! You are a good person!');
-        window.location.href='/';
     }
 });
