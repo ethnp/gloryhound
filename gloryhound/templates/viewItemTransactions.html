@@ -5,47 +5,82 @@
         </div>
         <div class="panel-body">
             <form class="form-horizontal">
+                <h3>
+                    Item Info
+                    <button type="submit" class="btn btn-success pull-right"><icon class="">$</icon> Sell</button>
+                </h3>
+                <hr/>
                 <div class="form-group">
                     <label for="itemName" class="col-sm-2 control-label">Item Name:</label>
                     <div class="col-sm-10">
-                        {{viewItem.name}}
+                        <input type="text" class="form-control" readonly="true" name="itemName" id="itemName" value="{{fullItem.name}}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="totalAmount" class="col-sm-2 control-label">Total Amount:</label>
+                    <label for="category" class="col-sm-2 control-label">Category:</label>
                     <div class="col-sm-10">
-                        ${{viewItem.price}}
+                        <input type="text" class="form-control" readonly="true" name="category" id="category" value="{{fullItem.category}}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="installmentAmount" class="col-sm-2 control-label">Saved:</label>
+                    <label for="price" class="col-sm-2 control-label">Price:</label>
                     <div class="col-sm-10">
-                       ${{viewItem.amountSaved}}
+                        <input type="text" class="form-control" readonly="true" name="price" id="price" value="${{fullItem.price}}">
+                    </div>
+                </div>
+                <hr/>
+                <h3>Payment Info</h3>
+                <hr/>
+                <div class="form-group">
+                    <label for="amountSaved" class="col-sm-2 control-label">Amount Saved Until Now:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly="true" name="amountSaved" id="amountSaved" value="${{fullItem.amountSaved}}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="charity" class="col-sm-2 control-label">Installment:</label>
+                    <label for="amountNeeded" class="col-sm-2 control-label">Amount Still Needed:</label>
                     <div class="col-sm-10">
-                        ${{viewItem.installmentAmount}}
+                        <input type="text" class="form-control" readonly="true" name="amountNeeded" id="amountNeeded" value="${{fullItem.missing}}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="charity" class="col-sm-2 control-label">Missing:</label>
+                    <label for="installmentAmount" class="col-sm-2 control-label">Installment Amount:</label>
                     <div class="col-sm-10">
-                        ${{viewItem.missing}}
+                        <input type="text" class="form-control" readonly="true" name="installmentAmount" id="installmentAmount" value="${{fullItem.installmentAmount}}">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="charity" class="col-sm-2 control-label">Missing:</label>
+                    <label for="lastInstallment" class="col-sm-2 control-label">Last Installment:</label>
                     <div class="col-sm-10">
-                        {{viewItem.category}}
+                        <input type="text" class="form-control" readonly="true" name="lastInstallment" id="lastInstallment" value="{{fullItem.lastTransaction}}">
                     </div>
                 </div>
-                </form>
+                <div class="form-group">
+                    <label for="frequency" class="col-sm-2 control-label">Installment Frequency:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly="true" name="frequency" id="frequency" value="{{fullItem.frequency}}">
+                    </div>
+                </div>
+                <hr/>
+                <h3>Charity Info</h3>
+                <hr/>
+                <div class="form-group">
+                    <label for="charityName" class="col-sm-2 control-label">Charity Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly="true" name="charityName" id="charityName" value="{{fullItem.charity}}">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="charityAmount" class="col-sm-2 control-label">Charity Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" readonly="true" name="charityAmount" id="charityAmount" value="{{fullItem.charityAmount}}%">
+                    </div>
+                </div>
+            </form>
         </div>
 
     </div>
-    <div class="panel panel-primary col-md-11 col-md-offset-1">
+    <div class="panel panel-primary col-md-10 col-md-offset-1">
         <div class="container">
             <div class="row">
                 <div class="span5">
@@ -59,7 +94,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        {{#each viewItem.transactions}}
+                        {{#each fullItem.transactions}}
                             <tr>
                                 <td>{{_id}}</td>
                                 <td>{{date}}</td>
@@ -81,4 +116,5 @@
         </div>
     </div>
 </template>
+
 
