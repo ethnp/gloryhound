@@ -22,7 +22,7 @@ Template.newGoal.events({
                     itemId: newItem,
                     amount: event.target.installmentAmount.value,
                     date: new Date(),
-                    success: response.success
+                    success: (typeof response.success !== 'undefined')?response.success:false
 
                 }
             );
