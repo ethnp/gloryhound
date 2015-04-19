@@ -97,10 +97,10 @@ DashboardItem = {
             return
         }
         item = item[0];
-        console.log(item);
+        //console.log(item);
         var transactionsForItem = Transactions.getAllTransactionsForItem(item._id);
         item.transactions = transactionsForItem;
-        console.log(item.transactions);
+        //console.log(item.transactions);
         var totalForItem = 0;
         for (j = 0; j <  transactionsForItem.length; j++) {
             var transaction = transactionsForItem[j];
@@ -120,7 +120,7 @@ DashboardItem = {
     },
 
     addBarColors: function(itemBar) {
-        console.log(itemBar);
+        //console.log(itemBar);
         itemBar.barIsDanger = itemBar.percentage < 33;
         itemBar.barIsWarning = itemBar.percentage > 33 && itemBar.percentage < 66;
         itemBar.barIsInfo = itemBar.percentage > 66 && itemBar.percentage < 99;
