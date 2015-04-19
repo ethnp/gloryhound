@@ -24,6 +24,10 @@
                 <p>Amount Saved Until Now: ${{amountSaved}}</p>
                 <p>Amount Still Needed: ${{missing}}</p>
                 <p>Last Installment {{lastTransaction}}</p>
+                {{#if barIsSuccess}}
+                    <icon class="glyphicon glyphicon-ok-sign"></icon>
+                {{/if}}
+
 
             </div>
             <div class="modal-footer" style="text-align: left">
