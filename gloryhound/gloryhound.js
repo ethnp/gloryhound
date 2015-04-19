@@ -21,3 +21,4 @@ Router.map(function() {
     }
   });
 });
+//Meteor.setInterval(Transactions.doDailyRecurring,15000);

@@ -30,5 +30,8 @@ Transactions = {
     },
     clean: function() {
         TransactionsModel.remove({});
+    },
+    doDailyRecurring: function() {
+        var allItems = ItemsModel.getAllItems();
     }
 };
