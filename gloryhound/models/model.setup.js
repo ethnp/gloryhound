@@ -1,15 +1,16 @@
 Setup = {
 
     setupData : function(userId) {
-
         var item1 = Items.create({
             userId: userId,
             name : 'PS4',
             category : 'electronics games',
             charityAmount: .05,
             charity:  'Boys & Girls & Dogs & Cats',
-            price: 400.0
+            price: 400.0,
+            installmentAmount:10.0
         });
+
 
         Transactions.create({
             itemId: item1,
@@ -35,7 +36,8 @@ Setup = {
             category : 'electronics games',
             charityAmount: .05,
             charity:  'Animals & Insects',
-            price: 400.0
+            price: 400.0,
+            installmentAmount:10.0
         });
 
         Transactions.create({
@@ -60,7 +62,8 @@ Setup = {
             category : 'electronics games',
             charityAmount: .05,
             charity:  'Fishes & Fishers',
-            price: 900.0
+            price: 900.0,
+            installmentAmount:10.0
         });
 
         Transactions.create({

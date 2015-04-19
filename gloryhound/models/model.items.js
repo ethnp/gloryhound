@@ -14,6 +14,9 @@ Items = {
         if (typeof obj.name === 'undefined') return 'Collection needs a valid name';
         if (typeof obj.category === 'undefined') return 'Collection needs a valid category';
         if (typeof obj.charity === 'undefined') return 'Collection needs a valid charity';
+        if (typeof obj.price === 'undefined') return 'Collection needs a valid price';
+        if (typeof obj.userId === 'undefined') return 'Collection needs a valid userId';
+        if (typeof obj.installmentAmount === 'undefined') return 'Collection needs a valid installment amount';
         return ItemsModel.insert(obj);
     },
     getItem: function(id){

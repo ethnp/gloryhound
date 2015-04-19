@@ -32,6 +32,22 @@ Meteor.methods({
             paymentMethodNonce: nonce});
         Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.braintree': response.customer}});
         return response;
+    },
+    processPayment: function(amount){
+
+        var gateway = braintree.connect({
+            environment: braintree.Environment.Sandbox,
+            merchantId: '7ndrgty5gfj7nf7x',
+            publicKey: 'h22qgbf7h3st9h2s',
+            privateKey: 'd7b18e16a3edcbecbaf947ac1ac11152'
+        });
+
+        var processPayment = Meteor.wrapAsync(gateway.transaction.sale, gateway.transaction);
+
+        var response = processPayment({customerId: Meteor.user().profile.braintree.paymentMethods[0].customerId,
+            amount: amount});
+        return response;
+
     }
 
 });
