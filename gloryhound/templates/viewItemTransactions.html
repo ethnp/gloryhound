@@ -1,53 +1,84 @@
 <template name="viewItemTransactions">
     <div class="panel panel-primary col-md-8 col-md-offset-2">
         <div class="panel-heading">
-            <h3 class="panel-title">View Item Transactions</h3>
+            <h3 class="panel-title">Item Transactions</h3>
         </div>
         <div class="panel-body">
-            <div class="form-group">
-                <label for="itemName" class="col-sm-2 control-label">Item Name:</label>
-                <div class="col-sm-10">
-                    {{item.name}}
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="itemName" class="col-sm-2 control-label">Item Name:</label>
+                    <div class="col-sm-10">
+                        {{viewItem.name}}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="saveAmount" class="col-sm-2 control-label">Amount To Save:</label>
-                <div class="col-sm-10">
-                    <input type="currency" class="form-control" name="saveAmount" id="saveAmount" placeholder="Amount">
+                <div class="form-group">
+                    <label for="totalAmount" class="col-sm-2 control-label">Total Amount:</label>
+                    <div class="col-sm-10">
+                        ${{viewItem.price}}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="charity" class="col-sm-2 control-label">Charity:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="charity" id="charity" placeholder="Charity">
+                <div class="form-group">
+                    <label for="installmentAmount" class="col-sm-2 control-label">Saved:</label>
+                    <div class="col-sm-10">
+                       ${{viewItem.amountSaved}}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="charityAmount" class="col-sm-2 control-label">Amount To Donate:</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" name="charityAmount" id="charityAmount" placeholder="Amount (%)">
+                <div class="form-group">
+                    <label for="charity" class="col-sm-2 control-label">Installment:</label>
+                    <div class="col-sm-10">
+                        ${{viewItem.installmentAmount}}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="category" class="col-sm-2 control-label">Category:</label>
-                <div class="col-sm-10">
-                    <select class="form-control"  name="category" id="category">
-                        <option value="">Please Select</option>
-                        <option value="Electronics">Electronics</option>
-                        <option value="Automotive">Automotive</option>
-                        <option value="Literature">Literature</option>
-                        <option value="Clothing">Clothing</option>
-                        <option value="Games">Games</option>
-                    </select>
+                <div class="form-group">
+                    <label for="charity" class="col-sm-2 control-label">Missing:</label>
+                    <div class="col-sm-10">
+                        ${{viewItem.missing}}
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success"><icon class="glyphicon glyphicon-plus"></icon> Add</button>
+                <div class="form-group">
+                    <label for="charity" class="col-sm-2 control-label">Missing:</label>
+                    <div class="col-sm-10">
+                        {{viewItem.category}}
+                    </div>
                 </div>
-            </div>
+                </form>
+        </div>
 
+    </div>
+    <div class="panel panel-primary col-md-11 col-md-offset-1">
+        <div class="container">
+            <div class="row">
+                <div class="span5">
+                    <table class="table table-striped table-condensed">
+                        <thead>
+                        <tr>
+                            <th>Transaction Id</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#each viewItem.transactions}}
+                            <tr>
+                                <td>{{_id}}</td>
+                                <td>{{date}}</td>
+                                <td>${{amount}}</td>
+                                {{#if success}}
+                                    <td><span class="label label-success">{{status}}</span></td>
+                                {{else}}
+                                    <td><span class="label label-danger">{{status}}</span></td>
+                                {{/if}}
+                            </tr>
+                        {{/each}}
+                        <tr>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-    {{viewItem.transactions.length}}
 </template>
+
