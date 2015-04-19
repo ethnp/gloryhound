@@ -1,7 +1,7 @@
 
 Template.privateDashboard.rendered = function(){
-    Setup.setupData(Meteor.userId());
-}
+    //Setup.setupData(Meteor.userId());
+};
 
 Template.privateDashboard.helpers({
     ownItems :function () {

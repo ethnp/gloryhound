@@ -1,5 +1,5 @@
 Template.viewItemTransactions.helpers({
-    item: function() {
+    item: function(){
         return DashboardItem.getItemTransactionsByItemId(this.id);
     }
 });
