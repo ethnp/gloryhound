@@ -1,8 +1,8 @@
 
 Template.dashboard.rendered = function(){
-    /*Meteor.call('cleanDB', '', function(){
-        Setup.setupData(Meteor.userId());
-    });*/
+    //Meteor.call('cleanDB', '', function(){
+    //    Setup.setupData(Meteor.userId());
+    //})
     Session.set('dashboardItems', DashboardItem.getPublicItems());
 };
 
