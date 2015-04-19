@@ -1,5 +1,6 @@
 <head>
   <title>gloryhound</title>
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 </head>
 
 <body>
@@ -21,6 +22,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="{{pathFor 'dashboard'}}"> Public Dashboard</a></li>
           <li><a href="{{pathFor 'newGoal'}}"> New Goal</a></li>
+          <li><a href="{{pathFor 'userProfile'}}"> Edit Profile</a></li>
         <li>{{> loginButtons }}</li>
       </ul>
     </div><!-- /.navbar-collapse -->
