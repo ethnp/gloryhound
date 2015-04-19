@@ -23,7 +23,7 @@ DashboardItem = {
                 }
                 totalForItem +=transaction.amount;
             }
-            dashItems[length].percentage = ('' + (totalForItem/item.price)*100).substring(0,2);
+            dashItems[length].percentage = ('' + (totalForItem/item.price)*100).substring(0,4);
             dashItems[length].missing = item.price - totalForItem;
             dashItems[length].amountSaved = totalForItem;
             dashItems[length].charityAmount = totalForItem * item.charityAmount;

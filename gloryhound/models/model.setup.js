@@ -50,21 +50,21 @@ Setup = {
 
         Transactions.create({
             itemId: item2,
-            amount: 101,
+            amount: 100,
             date: new Date(),
             status: 'Success',
             success: true
         });
         Transactions.create({
             itemId: item2,
-            amount: 102,
+            amount: 50,
             date: new Date(),
             status: 'Success',
             success: true
         });
         Transactions.create({
             itemId: item2,
-            amount: 103,
+            amount: 55,
             date: new Date(),
             status: 'Success',
             success: true
@@ -127,7 +127,7 @@ Setup = {
 
         Transactions.create({
             itemId: item4,
-            amount: 150,
+            amount: 100,
             date: new Date(),
             status: 'Success',
             success: true
@@ -135,7 +135,7 @@ Setup = {
 
         Transactions.create({
             itemId: item4,
-            amount: 160,
+            amount: 1800,
             date: new Date(),
             status: 'Success',
             success: true
