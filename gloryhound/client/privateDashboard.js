@@ -5,6 +5,6 @@ Template.privateDashboard.rendered = function(){
 
 Template.privateDashboard.helpers({
     ownItems :function () {
-        return  DashboardItem.getPublicItems();}
+        return  DashboardItem.getItemsByUser(Meteor.userId());}
 });
 

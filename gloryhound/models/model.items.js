@@ -38,6 +38,10 @@ Items = {
 
         return items;
     },
+    getItemsByUser: function(userId){
+        var items = ItemsModel.find({"userId": userId}).fetch();
+        return items;
+    },
     clean: function() {
         ItemsModel.remove({});
     }
