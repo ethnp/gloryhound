@@ -27,5 +27,7 @@ Template.newGoal.events({
         Meteor.call('processPayment', event.target.totalAmount.value, function(error, response){
             console.log(response);
         });
+        alert('Congratulations! You have started your path to saving for your desired ' + event.target.itemName.value + '!\n\rThank you also for donating to the charity ' + event.target.charity.value + '! You are a good person!');
+        window.location.href='/';
     }
 });

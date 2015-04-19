@@ -8,3 +8,10 @@ Template.sellView.helpers({
         return myItems;
     }
 });
+Template.sellView.events({
+    'submit form': function(e){
+        e.preventDefault();
+        alert('The item has been sold. The amount will be credited to your account.');
+        window.location.href='/dashboard';
+    }
+});
