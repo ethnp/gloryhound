@@ -13,11 +13,13 @@ Template.newGoal.events({
                 charityAmount: event.target.charityAmount.value,
                 price: event.target.totalAmount.value,
                 installmentAmount: event.target.installmentAmount.value,
-                frequency: event.target.frequency.value
+                frequency: event.target.frequency.value,
+                sold: false
             }
         );
-        Meteor.call('processPayment', event.target.totalAmount.value, function(error, response){
-            Transactions.create(
+        console.log(newItem);
+        Meteor.call('processPayment', event.target.installmentAmount.value, function(error, response){
+            var trans = Transactions.create(
                 {
                     itemId: newItem,
                     amount: event.target.installmentAmount.value,
@@ -26,6 +28,7 @@ Template.newGoal.events({
 
                 }
             );
+            console.log(trans);
             console.log(response);
             alert('Congratulations! You have started your path to saving for your desired ' + event.target.itemName.value + '!\n\rThank you also for donating to the charity ' + event.target.charity.value + '! You are a good person!');
             window.location.href='/';
