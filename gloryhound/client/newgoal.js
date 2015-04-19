@@ -17,7 +17,7 @@ Template.newGoal.events({
         );
         Transactions.create(
             {
-                item: newItem,
+                itemId: newItem,
                 amount: event.target.installmentAmount.value,
                 date: new Date()
 
