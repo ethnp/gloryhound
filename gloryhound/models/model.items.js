@@ -32,6 +32,12 @@ Items = {
             obj
         );
     },
+    getItemsByCategory: function(category){
+        var items = ItemsModel.find({"category": {$regex: category}}).fetch();
+        console.log(items);
+
+        return items;
+    },
     clean: function() {
         ItemsModel.remove({});
     }

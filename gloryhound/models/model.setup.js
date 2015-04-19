@@ -4,7 +4,7 @@ Setup = {
         var item1 = Items.create({
             userId: userId,
             name : 'PS4',
-            category : 'electronics games',
+            category : 'fishing',
             charityAmount: .05,
             charity:  'Boys & Girls & Dogs & Cats',
             price: 400.0,
