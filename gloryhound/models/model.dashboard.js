@@ -28,8 +28,34 @@ DashboardItem = {
             dashItems[length].amountSaved = totalForItem;
             dashItems[length].charityAmount = totalForItem * item.charityAmount;
         }
-        console.log(dashItems);
         return dashItems;
 
+    },
+
+    getItemTransactionsByItemId: function(itemId) {
+        var item = Items.getItem(itemId);
+        console.log(itemId);
+        if (item == null) {
+            return;
+        }
+        var transactionsForItem = Transactions.getAllTransactionsForItem(item._id);
+        item.transactions = transactionsForItem;
+        console.log(item.transactions);
+        var totalForItem = 0;
+        for (j = 0; j <  transactionsForItem.length; j++) {
+            var transaction = transactionsForItem[j];
+            if (j == 0) {
+                item.lastTransaction = transaction.date.getMonth() + '-' + transaction.date.getDate() + '-'  +
+                    transaction.date.getFullYear() + " - " + transaction.date.getHours() + ':' + transaction.date.getMinutes();
+            }
+            totalForItem +=transaction.amount;
+        }
+        item.percentage = ('' + (totalForItem/item.price)*100).substring(0,2);
+        item.missing = item.price - totalForItem;
+        item.amountSaved = totalForItem;
+        item.charityAmount = totalForItem * item.charityAmount;
+        return item;
     }
+
+
 };
