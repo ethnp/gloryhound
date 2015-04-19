@@ -27,6 +27,7 @@ DashboardItem = {
             dashItems[length].missing = item.price - totalForItem;
             dashItems[length].amountSaved = totalForItem;
             dashItems[length].charityAmount = totalForItem * item.charityAmount;
+            this.addBarColors(dashItems[length]);
         }
         return dashItems;
 
@@ -54,6 +55,7 @@ DashboardItem = {
             dashItems[length].missing = item.price - totalForItem;
             dashItems[length].amountSaved = totalForItem;
             dashItems[length].charityAmount = totalForItem * item.charityAmount;
+            this.addBarColors(dashItems[length]);
         }
         return dashItems;
 
@@ -82,7 +84,16 @@ DashboardItem = {
         item.missing = item.price - totalForItem;
         item.amountSaved = totalForItem;
         item.charityAmount = totalForItem * item.charityAmount;
+        this.addBarColors(item);
         return item;
+    },
+
+    addBarColors: function(itemBar) {
+        console.log(itemBar);
+        itemBar.barIsDanger = itemBar.percentage < 33;
+        itemBar.barIsWarning = itemBar.percentage > 33 && itemBar.percentage < 66;
+        itemBar.barIsInfo = itemBar.percentage > 66 && itemBar.percentage < 99;
+        itemBar.barIsSuccess = itemBar.percentage == 100;
     }
 
 
