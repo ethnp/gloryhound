@@ -34,10 +34,11 @@ DashboardItem = {
 
     getItemTransactionsByItemId: function(itemId) {
         var item = Items.getItem(itemId);
-        console.log(itemId);
-        if (item == null) {
-            return;
+        if (item.length != 1){
+            return
         }
+        item = item[0];
+        console.log(item);
         var transactionsForItem = Transactions.getAllTransactionsForItem(item._id);
         item.transactions = transactionsForItem;
         console.log(item.transactions);
