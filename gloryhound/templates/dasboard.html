@@ -24,9 +24,6 @@
                 <p>Amount Saved Until Now: ${{amountSaved}}</p>
                 <p>Amount Still Needed: ${{missing}}</p>
                 <p>Last Installment {{lastTransaction}}</p>
-                {{#if barIsSuccess}}
-                    <icon class="glyphicon glyphicon-ok-sign"></icon>
-                {{/if}}
 
 
             </div>
@@ -55,7 +52,11 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-md-4"><b>{{percentage}}% Funded</b></div>
+                    <div class="col-md-4"><b>{{percentage}}% Funded</b>
+                        {{#if barIsSuccess}}
+                        <h1 class="glyphicon glyphicon-ok-sign"></h1>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
         </div>
