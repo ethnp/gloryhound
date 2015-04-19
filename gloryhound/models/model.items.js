@@ -7,6 +7,8 @@ Items = {
     name: '',
     category: '',
     charity: '',
+    price: '',
+    userId: '',
 
     create: function(obj){
         if (typeof obj.name === 'undefined') return 'Collection needs a valid name';
@@ -27,7 +29,7 @@ Items = {
         );
     },
     clean: function() {
-        ItemsModel.remove();
+        ItemsModel.remove({});
     }
 };
 

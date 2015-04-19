@@ -1,16 +1,15 @@
 TransactionsModel = new Mongo.Collection('transactions');
 
 Transactions = {
-    item: '',
+    itemId: '',
     amount: '',
     date: '',
-    user: '',
+
 
     create: function(obj){
-        if (typeof obj.item === 'undefined') return 'Collection needs a valid item id';
+        if (typeof obj.itemId === 'undefined') return 'Collection needs a valid item id';
         if (typeof obj.amount === 'undefined') return 'Collection needs a valid amount property';
         if (typeof obj.date === 'undefined') return 'Collection needs a valid date property';
-        if (typeof obj.user === 'undefined') return 'Collection needs a user id';
         return TransactionsModel.insert(obj);
     },
     getTransaction: function(id){
@@ -20,7 +19,7 @@ Transactions = {
         return TransactionsModel.find({}).fetch();
     },
     getAllTransactionsForItem: function(id){
-        return TransactionsModel.find({item: id}, {sort: {date: -1}}).fetch();
+        return TransactionsModel.find({itemId: id}, {sort: {date: -1}}).fetch();
     },
 
     updateTransaction: function(id, obj){
@@ -30,6 +29,6 @@ Transactions = {
         );
     },
     clean: function() {
-        TransactionsModel.remove();
+        TransactionsModel.remove({});
     }
 };

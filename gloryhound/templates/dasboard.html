@@ -5,9 +5,9 @@
         </div>
         <div class="panel-body">
             <ul>
-                {{#each items}}
-                    {{> showItem}}
-                {{/each}}
+            {{#each items}}
+                {{> showItem}}
+            {{/each}}
             </ul>
         </div>
     </div>
@@ -16,24 +16,21 @@
 <template name="showItem">
     <li class="col-md-3">
         <div class="thumbnail" style="padding: 0">
-            <div style="padding:4px">
-                <img alt="300x200" style="width: 100%" src="">
-            </div>
             <div class="caption">
-                <h2>{{item.item.name}}</h2>
-                <p>{{date}} - {{user}}</p>
-                <p><i class="icon icon-map-marker"></i> {{amount}}</p>
+                <h2>{{Item.name}} - ${{Item.price}}</h2>
+                <p>Amount saved: ${{amountSaved}}</p>
+                <p>Amount needed: ${{missing}}</p>
+                <p>Last Transaction {{lastTransaction}}</p>
+
             </div>
             <div class="modal-footer" style="text-align: left">
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="{{item.item.amount/item.amountSaved}}" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                        <span class="sr-only">60% Complete</span>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                        <span class="sr-only">{{percentage}} Complete</span>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4"><b>60%</b><br/><small>FUNDED</small></div>
-                    <div class="col-md-4"><b>$400</b><br/><small>PLEDGED</small></div>
-                    <div class="col-md-4"><b>18</b><br/><small>DAYS</small></div>
+                    <div class="col-md-4"><b>{{percentage}}% Funded</b></div>
                 </div>
             </div>
         </div>
