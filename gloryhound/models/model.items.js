@@ -17,6 +17,7 @@ Items = {
         if (typeof obj.price === 'undefined') return 'Collection needs a valid price';
         if (typeof obj.userId === 'undefined') return 'Collection needs a valid userId';
         if (typeof obj.installmentAmount === 'undefined') return 'Collection needs a valid installment amount';
+        if (typeof obj.frequency === 'undefined') return 'Collection needs a valid freqeuncy';
         return ItemsModel.insert(obj);
     },
     getItem: function(id){

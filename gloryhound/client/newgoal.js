@@ -12,7 +12,8 @@ Template.newGoal.events({
                 charity: event.target.charity.value,
                 charityAmount: event.target.charityAmount.value,
                 price: event.target.totalAmount.value,
-                installmentAmount: event.target.installmentAmount.value
+                installmentAmount: event.target.installmentAmount.value,
+                frequency: event.target.frequency.value
             }
         );
         Transactions.create(

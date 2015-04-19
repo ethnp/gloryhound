@@ -8,7 +8,8 @@ Setup = {
             charityAmount: .05,
             charity:  'Boys & Girls & Dogs & Cats',
             price: 400.0,
-            installmentAmount:10.0
+            installmentAmount:10.0,
+            frequency: 'Weekly'
         });
 
 
@@ -37,7 +38,8 @@ Setup = {
             charityAmount: .05,
             charity:  'Animals & Insects',
             price: 400.0,
-            installmentAmount:10.0
+            installmentAmount:10.0,
+            frequency: 'Monthly'
         });
 
         Transactions.create({
@@ -63,7 +65,8 @@ Setup = {
             charityAmount: .05,
             charity:  'Fishes & Fishers',
             price: 900.0,
-            installmentAmount:10.0
+            installmentAmount:10.0,
+            frequency: 'Daily'
         });
 
         Transactions.create({
