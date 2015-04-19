@@ -38,6 +38,7 @@ DashboardItem = {
         if (item == null) {
             return;
         }
+        console.log(Transactions.getAllTransactionsForItem(item._id));
         var transactionsForItem = Transactions.getAllTransactionsForItem(item._id);
         item.transactions = transactionsForItem;
         console.log(item.transactions);
