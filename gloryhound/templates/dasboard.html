@@ -29,22 +29,22 @@
             <div class="modal-footer" style="text-align: left">
                 <div class="progress">
                     {{#if barIsDanger}}
-                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
                         <span class="sr-only">{{percentage}} Complete</span>
                     </div>
                     {{/if}}
                     {{#if barIsWarning}}
-                    <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                    <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
                         <span class="sr-only">{{percentage}} Complete</span>
                     </div>
                     {{/if}}
                     {{#if barIsInfo}}
-                    <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
                         <span class="sr-only">{{percentage}} Complete</span>
                     </div>
                     {{/if}}
                     {{#if barIsSuccess}}
-                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{percentage}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percentage}}%;">
                         <span class="sr-only">{{percentage}} Complete</span>
                     </div>
                     {{/if}}
